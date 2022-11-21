@@ -1,29 +1,73 @@
 ﻿using Models;
+using System.Collections;
 using System.Globalization; //System.Globalization usado para alterar a região padrão aplicada ao sistema, alterando formatações.
+using System.Xml.Linq;
 
-string dataString = "2022-04-22 14:26";
+// --------------------- Dictionary permite definir uma chave e valor vinculado à chave
+/*
+Dictionary<int, string> lojas = new Dictionary<int, string>();
 
-if(DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataFinal)) 
+lojas.Add(20736132, "Neacir Assunção");
+lojas.Add(20736151, "Bruno dos Santos rosa");
+
+foreach (var item in lojas)
 {
-    Console.WriteLine($"Data Convertida corretamente: {dataFinal}");
-}else
+    Console.WriteLine($"Chave: {item.Key} - Valor: {item.Value}");
+}
+lojas[20736151] = "Douglas Domingues"; //Para manipular ou usar os valores, a lógica é igual a um array
+Console.WriteLine("--------");
+Console.WriteLine(lojas[20736151]);
+
+lojas.Remove(20736132);
+
+foreach (var item in lojas)
 {
-    Console.WriteLine($"Data em formato inválido: {dataString}");
+    Console.WriteLine($"Chave: {item.Key} - Valor: {item.Value}");
+}
+*/
+
+// --------------------- Pilhas trabalham sequencialmente, mas o último elemento declarado é o primeiro a sair. 'LIFO' (last in first out)
+/*
+Stack<int> pilha = new Stack<int>();
+pilha.Push(8);
+pilha.Push(23);
+pilha.Push(14);
+pilha.Push(7);
+foreach (int elemento in pilha)
+{
+    Console.WriteLine(elemento);
 }
 
-dataString = "2022-04-32 14:26";
-
-if (DateTime.TryParseExact(dataString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataFinal2))
+pilha.Pop();
+pilha.Push(pilha.Pop());
+Console.WriteLine("\n");
+foreach (int elemento in pilha)
 {
-    Console.WriteLine($"Data Convertida corretamente: {dataFinal2}");
-}
-else
-{
-    Console.WriteLine($"Data em formato inválido: {dataString}");
+    Console.WriteLine(elemento);
 }
 
+Console.WriteLine($"\nRemovendo o elemento nº {pilha.Pop()}");
+foreach (int elemento in pilha)
+{
+    Console.WriteLine(elemento);
+}
+*/
 
-//CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR"); //Definição de qual será a região aplicada em toda a solução.
+// --------------------- Filas possuem uma lógica sequencial, sempre trabalhando com os elementos na ordem que foram declarados. famoso 'FIFO' (first in first out)
+/*
+Queue<int> fila = new Queue<int>();
+
+fila.Enqueue(1);
+fila.Enqueue(8);
+fila.Enqueue(6);
+fila.Enqueue(4);
+
+foreach (int i in fila)
+{
+    Console.WriteLine(i);
+}
+
+CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR"); //Definição de qual será a região aplicada em toda a solução.
 
 //Pessoa p1 = new Pessoa(nome: "Douglas", sobrenome: "Domingues", datainc: DateTime.Now);
 //Pessoa p2 = new Pessoa(nome: "Isabela", sobrenome: "Domingues", datainc: DateTime.Now);
@@ -36,5 +80,5 @@ else
 //c1.AdicionaAluno(p2);
 //c1.AdicionaAluno(p3);
 
-//Console.WriteLine($"O Curso {c1.Nome} possui {c1.ContagemAlunos()} Alunos");
-//c1.ListaAlunos();
+Console.WriteLine($"O Curso {c1.Nome} possui {c1.ContagemAlunos()} Alunos");
+c1.ListaAlunos();
