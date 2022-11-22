@@ -2,6 +2,11 @@
 using System.Collections;
 using System.Globalization; //System.Globalization usado para alterar a região padrão aplicada ao sistema, alterando formatações.
 using System.Xml.Linq;
+// --------------------- Tuplas permitem criar uma variável com vários dados de tipos diferentes, semelhante a um objeto, mas sua declaração é mais simples.
+(int, string, string) exemplotupla = (1, "Douglas", "Domingues");
+
+Console.WriteLine(exemplotupla);
+
 
 // --------------------- Dictionary permite definir uma chave e valor vinculado à chave
 /*
