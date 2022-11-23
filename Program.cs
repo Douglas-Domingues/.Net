@@ -4,9 +4,40 @@ using System.Globalization; //System.Globalization usado para alterar a região 
 using System.Xml.Linq;
 // --------------------- Tuplas permitem criar uma variável com vários dados de tipos diferentes, semelhante a um objeto, mas sua declaração é mais simples.
 
-  (int, string, string) exemplotupla = (1, "Douglas", "Domingues");
+(int Id, string Nome, string Sobrenome) exemplotupla = (1, "Douglas", "Domingues");
+var outroexemplotupla = Tuple.Create(1, "Douglas", "Domingues");
+ValueTuple<int, string, string> maisoutratupla = (1, "Douglas", "Domingues");
 
-  Console.WriteLine(exemplotupla);
+//Console.WriteLine($"{exemplotupla}\n");
+Console.WriteLine($"ID: {exemplotupla.Id}");
+Console.WriteLine($"Nome: {exemplotupla.Nome}");
+Console.WriteLine($"Sobrenome: {exemplotupla.Sobrenome}\n");
+
+Console.WriteLine($"ID: {outroexemplotupla.Item1}");
+Console.WriteLine($"Nome: {outroexemplotupla.Item2}");
+Console.WriteLine($"Sobrenome: {outroexemplotupla.Item3}\n");
+
+Console.WriteLine($"ID: {maisoutratupla.Item1}");
+Console.WriteLine($"Nome: {maisoutratupla.Item2}");
+Console.WriteLine($"Sobrenome: {maisoutratupla.Item3}\n");
+
+
+LeitorArquivo texto1 = new LeitorArquivo();
+
+var (sucesso, linhas, qtdelinhas) = texto1.LeArquivo("Arquivos/Texto.txt");
+
+if(sucesso)
+{
+    Console.WriteLine($"Texto lido com sucesso\nNúmero de linhas do texto:{qtdelinhas}\n");
+    foreach(var linha in linhas)
+    {
+        Console.WriteLine(linha);
+    }
+    Console.WriteLine("\n");
+}else
+{
+    Console.WriteLine("Ocorreu um erro para ler o arquivo");
+}
  
 
 
