@@ -2,8 +2,22 @@
 using System.Collections;
 using System.Globalization; //System.Globalization usado para alterar a região padrão aplicada ao sistema, alterando formatações.
 using System.Xml.Linq;
-// --------------------- Tuplas permitem criar uma variável com vários dados de tipos diferentes, semelhante a um objeto, mas sua declaração é mais simples.
 
+// --------------------- Desconstrutores e IF Ternário
+/*
+Pessoa p1 = new Pessoa("Douglas", "Domingues", DateTime.Now);
+
+(string nome, string sobrenome) = p1;
+
+Console.WriteLine($"{nome} {sobrenome}");
+
+int numero = 20;
+
+Console.WriteLine($"O número {numero} é {(numero % 2 == 0 ? "par." : "ímpar.")}");
+*/
+
+// --------------------- Tuplas permitem criar uma variável com vários dados de tipos diferentes, semelhante a um objeto, mas sua declaração é mais simples.
+/*
 (int Id, string Nome, string Sobrenome) exemplotupla = (1, "Douglas", "Domingues");
 var outroexemplotupla = Tuple.Create(1, "Douglas", "Domingues");
 ValueTuple<int, string, string> maisoutratupla = (1, "Douglas", "Domingues");
@@ -24,7 +38,7 @@ Console.WriteLine($"Sobrenome: {maisoutratupla.Item3}\n");
 
 LeitorArquivo texto1 = new LeitorArquivo();
 
-var (sucesso, linhas, qtdelinhas) = texto1.LeArquivo("Arquivos/Texto.txt");
+var (sucesso, linhas, qtdelinhas) = texto1.LeArquivo("Arquivos/Texto.txt"); //Obs.: Pra descartar determinado retorno, substitua nome da propriedade por um underline(_).
 
 if(sucesso)
 {
@@ -34,12 +48,12 @@ if(sucesso)
         Console.WriteLine(linha);
     }
     Console.WriteLine("\n");
-}else
+}
+else
 {
     Console.WriteLine("Ocorreu um erro para ler o arquivo");
 }
- 
-
+*/
 
 // --------------------- Dictionary permite definir uma chave e valor vinculado à chave
 /*
