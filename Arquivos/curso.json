@@ -1,0 +1,35 @@
+[
+  {
+    "Nome": "Curso de Canto",
+    "Alunos": [
+      {
+        "DataInc": "24/11/2022 10:21",
+        "Nome_aluno": "ISABELA",
+        "Idade": 0,
+        "Sobrenome": "Domingues",
+        "NomeCompleto": "ISABELA DOMINGUES"
+      },
+      {
+        "DataInc": "24/11/2022 10:21",
+        "Nome_aluno": "ISADORA",
+        "Idade": 0,
+        "Sobrenome": "Braga",
+        "NomeCompleto": "ISADORA BRAGA"
+      }
+    ],
+    "Valor": 1299.99
+  },
+  {
+    "Nome": "Fundamentos .NET",
+    "Alunos": [
+      {
+        "DataInc": "24/11/2022 10:21",
+        "Nome_aluno": "DOUGLAS",
+        "Idade": 0,
+        "Sobrenome": "Domingues",
+        "NomeCompleto": "DOUGLAS DOMINGUES"
+      }
+    ],
+    "Valor": 1199.00
+  }
+]

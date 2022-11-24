@@ -2,6 +2,21 @@
 using System.Collections;
 using System.Globalization; //System.Globalization usado para alterar a região padrão aplicada ao sistema, alterando formatações.
 using System.Xml.Linq;
+using Newtonsoft.Json;
+using System.Text.Json;
+
+// --------------------- Serialização de Objetos
+//Venda v1 = new Venda(1, "Material Escritório", 25.00M);
+//string serializado = JsonConvert.SerializeObject(v1, Formatting.Indented);
+
+//Console.WriteLine(serializado);
+
+List<Curso> cursos = JsonConvert.DeserializeObject<List<Curso>>(File.ReadAllText("Arquivos/curso.json"));
+
+foreach (Curso curso in cursos)
+{
+    curso.ListaAlunos();
+}
 
 // --------------------- Desconstrutores e IF Ternário
 /*
@@ -137,12 +152,23 @@ Pessoa p2 = new Pessoa(nome: "Isabela", sobrenome: "Domingues", datainc: DateTim
 Pessoa p3 = new Pessoa(nome: "Isadora", sobrenome: "Braga", datainc: DateTime.Now);
 
 Curso c1 = new Curso(nome: "Curso de Canto", valor: 1299.99M);
-c1.Alunos = new List<Pessoa>();
+Curso c2 = new Curso(nome: "Fundamentos .NET", valor: 1199.00M);
 
-c1.AdicionaAluno(p1);
+c1.Alunos = new List<Pessoa>();
+c2.Alunos = new List<Pessoa>();
+List<Curso> listaCursos = new List<Curso>();
+
 c1.AdicionaAluno(p2);
 c1.AdicionaAluno(p3);
+c2.AdicionaAluno(p1);
+
+listaCursos.Add(c1);
+listaCursos.Add(c2);
 
 Console.WriteLine($"O Curso {c1.Nome} possui {c1.ContagemAlunos()} Alunos");
 c1.ListaAlunos();
+
+string serialize = JsonConvert.SerializeObject(listaCursos, Formatting.Indented);
+File.WriteAllText("Arquivos/curso.json", serialize);
+Console.WriteLine($"\n{serialize}");
 */

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Propriedades___Metodos___Construtores.Models
 {
@@ -13,7 +14,7 @@ namespace Propriedades___Metodos___Construtores.Models
         {
             Nome = nome;
             Sobrenome = sobrenome;
-            DataInc = datainc;
+            DataInc = datainc.ToString("dd/MM/yyyy HH:mm");
         }
         public void Deconstruct(out string nome, out string sobrenome)
         {
@@ -24,8 +25,10 @@ namespace Propriedades___Metodos___Construtores.Models
         private string _nome;
         private int _idade;
 
-        public DateTime DataInc { get; set; }
+        public string DataInc { get; set; }
 
+
+        [JsonProperty("Nome_aluno")]
         public string Nome
         {
             get => _nome.ToUpper();
