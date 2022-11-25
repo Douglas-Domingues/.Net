@@ -5,11 +5,25 @@ using System.Xml.Linq;
 using Newtonsoft.Json;
 using System.Text.Json;
 
-// --------------------- Serialização de Objetos
-//Venda v1 = new Venda(1, "Material Escritório", 25.00M);
-//string serializado = JsonConvert.SerializeObject(v1, Formatting.Indented);
+CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR"); //Definição de qual será a região aplicada em toda a solução.
+// --------------------- Nullable Types
 
-//Console.WriteLine(serializado);
+bool? assinatura = null;
+
+if (assinatura.HasValue && assinatura.Value)
+{
+    Console.WriteLine($"Assinatura realizada.");
+}else
+{
+    Console.WriteLine($"Cliente optou por não assinar ou se absteve.");
+}
+
+// --------------------- Serialização de Objetos
+/*
+Venda v1 = new Venda(1, "Material Escritório", 25.00M);
+string serializado = JsonConvert.SerializeObject(v1, Formatting.Indented);
+
+Console.WriteLine(serializado);
 
 List<Curso> cursos = JsonConvert.DeserializeObject<List<Curso>>(File.ReadAllText("Arquivos/curso.json"));
 
@@ -17,6 +31,7 @@ foreach (Curso curso in cursos)
 {
     curso.ListaAlunos();
 }
+*/
 
 // --------------------- Desconstrutores e IF Ternário
 /*
@@ -143,10 +158,8 @@ foreach (int valor2 in fila)
 }
 */
 
-// --------------------- Usando as propriedades, métodos e construtores
+// --------------------- Usando as propriedades, métodos e construtores / Json
 /*
-CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR"); //Definição de qual será a região aplicada em toda a solução.
-
 Pessoa p1 = new Pessoa(nome: "Douglas", sobrenome: "Domingues", datainc: DateTime.Now);
 Pessoa p2 = new Pessoa(nome: "Isabela", sobrenome: "Domingues", datainc: DateTime.Now);
 Pessoa p3 = new Pessoa(nome: "Isadora", sobrenome: "Braga", datainc: DateTime.Now);

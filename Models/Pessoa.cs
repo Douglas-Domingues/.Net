@@ -9,7 +9,7 @@ namespace Propriedades___Metodos___Construtores.Models
 {
     public class Pessoa
     {
-        public Pessoa() { }
+        public Pessoa(){}
         public Pessoa(string nome, string sobrenome, DateTime datainc)
         {
             Nome = nome;
@@ -26,7 +26,6 @@ namespace Propriedades___Metodos___Construtores.Models
         private int _idade;
 
         public string DataInc { get; set; }
-
 
         [JsonProperty("Nome_aluno")]
         public string Nome
@@ -65,8 +64,9 @@ namespace Propriedades___Metodos___Construtores.Models
 
         public string Sobrenome { get; set; }
 
-        public string NomeCompleto => (Nome + " " + Sobrenome).ToUpper();
+        public
 
+        public string NomeCompleto => (Nome + " " + Sobrenome).ToUpper();
 
         public void Apresentar()
         {

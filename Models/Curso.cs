@@ -46,7 +46,6 @@ namespace Propriedades___Metodos___Construtores.Models
             }
             //Usando o parâmetro "C" específica como "Currency" imprimindo a moeda da região, o número sequente representa o número de casas decimais.
             Console.WriteLine($"Valor total do curso:{Valor.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"))}"); //É possível especificar uma região diferente da definida no Program.cs
-
         }
     }
 }
