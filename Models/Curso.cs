@@ -42,11 +42,10 @@ namespace Propriedades___Metodos___Construtores.Models
 
             for (int count = 0; count < Alunos.Count; count++)
             {
-                Console.WriteLine($"Nº {count + 1} - {Alunos[count].NomeCompleto} - Matriculado em: {Alunos[count].DataInc.ToString("dd-MM-yy")}");
+                Console.WriteLine($"Nº {count + 1} - {Alunos[count].NomeCompleto} - Matriculado em: {Alunos[count].DataInc}");
             }
             //Usando o parâmetro "C" específica como "Currency" imprimindo a moeda da região, o número sequente representa o número de casas decimais.
-            Console.WriteLine($"Valor total do curso:{Valor.ToString("C3", CultureInfo.CreateSpecificCulture("en-US"))}"); //É possível especificar uma região diferente da definida no Program.cs
-
+            Console.WriteLine($"Valor total do curso:{Valor.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"))}"); //É possível especificar uma região diferente da definida no Program.cs
         }
     }
 }
