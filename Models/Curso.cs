@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace Propriedades___Metodos___Construtores.Models
 {
     public class Curso
     {
+        public Curso() { }
         public Curso(string nome, decimal valor)
         {
             Nome = nome;
@@ -42,10 +44,11 @@ namespace Propriedades___Metodos___Construtores.Models
 
             for (int count = 0; count < Alunos.Count; count++)
             {
-                Console.WriteLine($"Nº {count + 1} - {Alunos[count].NomeCompleto} - Matriculado em: {Alunos[count].DataInc}");
+                Console.WriteLine($"Nº {count + 1} - {Alunos[count].NomeCompleto} - Matriculado em: {Alunos[count].DataInc}" +
+                    $"\nDesconto Aplicado: {(Alunos[count].Desconto.HasValue ? Math.Round((decimal)(Valor * (Alunos[count].Desconto / 100)), 2).ToString("C") : "R$ 0,00")}\n");
             }
             //Usando o parâmetro "C" específica como "Currency" imprimindo a moeda da região, o número sequente representa o número de casas decimais.
-            Console.WriteLine($"Valor total do curso:{Valor.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"))}"); //É possível especificar uma região diferente da definida no Program.cs
+            Console.WriteLine($"Valor total do curso: {Valor.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"))}\n"); //É possível especificar uma região diferente da definida no Program.cs
         }
     }
 }

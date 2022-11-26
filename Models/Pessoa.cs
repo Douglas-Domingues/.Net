@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace Propriedades___Metodos___Construtores.Models
 {
     public class Pessoa
     {
         public Pessoa(){}
-        public Pessoa(string nome, string sobrenome, DateTime datainc)
+        public Pessoa(string nome, string sobrenome, DateTime datainc, decimal Desconto)
         {
             Nome = nome;
             Sobrenome = sobrenome;
@@ -64,7 +65,7 @@ namespace Propriedades___Metodos___Construtores.Models
 
         public string Sobrenome { get; set; }
 
-        public
+        public decimal? Desconto { get; set; }
 
         public string NomeCompleto => (Nome + " " + Sobrenome).ToUpper();
 

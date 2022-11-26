@@ -6,8 +6,75 @@ using Newtonsoft.Json;
 using System.Text.Json;
 
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR"); //Definição de qual será a região aplicada em toda a solução.
-// --------------------- Nullable Types
+// --------------------- Métodos de extensão (blowmind)
 
+bool verificaint = false;
+int divisor, multiplo;
+do
+{
+    Console.WriteLine("Digite um inteiro divisor:");
+    string entrada = Console.ReadLine();
+    if (Int32.TryParse(entrada, out divisor) == true)
+    {
+        verificaint = true;
+    }
+    else Console.WriteLine("Valor inválido");
+} while (verificaint == false);
+do
+{
+    verificaint = false;
+    Console.WriteLine($"Digite um inteiro para identificar se é múltiplo de {divisor}:");
+    string entrada = Console.ReadLine();
+    if (Int32.TryParse(entrada, out multiplo) == true)
+    {
+        verificaint = true;
+    }
+    else Console.WriteLine("Valor inválido");
+} while (verificaint == false);
+
+Console.WriteLine($"O número {multiplo} {(multiplo.VerifyMultiple(divisor) ? "é multiplo de" : "não é múltiplo de")} {divisor}");
+
+
+// --------------------- Variáveis Dynamic
+/*
+dynamic dinamica = 4;/*
+Console.WriteLine($"Valor: {dinamica} - Tipo: {dinamica.GetType()}");
+dinamica = "texto";
+Console.WriteLine($"Valor: {dinamica} - Tipo: {dinamica.GetType()}");
+dinamica = true;
+Console.WriteLine($"Valor: {dinamica} - Tipo: {dinamica.GetType()}");
+
+dinamica = new List<Curso>(JsonConvert.DeserializeObject<List<Curso>>(File.ReadAllText("Arquivos/curso.json"))); //Os operadores <> indicam que se trata de uma classe genérica onde deve-se passar o tipo de dados dentro do <>
+Console.WriteLine($"Valor: {dinamica} - Tipo: {dinamica.GetType()}");
+
+foreach (var curso in dinamica)
+{
+    curso.ListaAlunos();
+}
+*/
+
+// --------------------- Propriedades Anônimas (Permitem atribuir diferentes valores somente leitura à uma variável) - Não podem ser retornados em métodos.
+/*
+    // vantajoso para limitar a quantidade de propriedades que se vai trabalhar.
+
+var anonima = new { Nome = "Fulano", Sobrenome = "De Tal", Idade = 37 };
+
+Console.WriteLine($"Nome: {anonima.Nome}\n" +
+    $"Sobrenome: {anonima.Sobrenome}\n" +
+    $"Idade: {anonima.Idade}");
+
+List<Curso> listaCursos = JsonConvert.DeserializeObject<List<Curso>>(File.ReadAllText("Arquivos/curso.json"));
+
+var listaanonima = listaCursos.Select(x => new { x.Nome, x.Valor });
+
+foreach (var curso in listaanonima)
+{
+    Console.WriteLine($"Nome: {curso.Nome}\nValor: {curso.Valor.ToString("C")}");
+}
+*/
+
+// --------------------- Nullable Types
+/*
 bool? assinatura = null;
 
 if (assinatura.HasValue && assinatura.Value)
@@ -17,13 +84,14 @@ if (assinatura.HasValue && assinatura.Value)
 {
     Console.WriteLine($"Cliente optou por não assinar ou se absteve.");
 }
+*/
 
 // --------------------- Serialização de Objetos
 /*
-Venda v1 = new Venda(1, "Material Escritório", 25.00M);
-string serializado = JsonConvert.SerializeObject(v1, Formatting.Indented);
+//Venda v1 = new Venda(1, "Material Escritório", 25.00M);
+//string serializado = JsonConvert.SerializeObject(v1, Formatting.Indented);
 
-Console.WriteLine(serializado);
+//Console.WriteLine(serializado);
 
 List<Curso> cursos = JsonConvert.DeserializeObject<List<Curso>>(File.ReadAllText("Arquivos/curso.json"));
 

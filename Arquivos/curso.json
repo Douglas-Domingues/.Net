@@ -7,14 +7,16 @@
         "Nome_aluno": "ISABELA",
         "Idade": 0,
         "Sobrenome": "Domingues",
-        "NomeCompleto": "ISABELA DOMINGUES"
+        "NomeCompleto": "ISABELA DOMINGUES",
+        "Desconto": null
       },
       {
         "DataInc": "24/11/2022 10:21",
         "Nome_aluno": "ISADORA",
         "Idade": 0,
         "Sobrenome": "Braga",
-        "NomeCompleto": "ISADORA BRAGA"
+        "NomeCompleto": "ISADORA BRAGA",
+        "Desconto": null
       }
     ],
     "Valor": 1299.99
@@ -27,7 +29,8 @@
         "Nome_aluno": "DOUGLAS",
         "Idade": 0,
         "Sobrenome": "Domingues",
-        "NomeCompleto": "DOUGLAS DOMINGUES"
+        "NomeCompleto": "DOUGLAS DOMINGUES",
+        "Desconto": 10.00
       }
     ],
     "Valor": 1199.00
