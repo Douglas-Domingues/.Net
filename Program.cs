@@ -6,10 +6,31 @@ using Newtonsoft.Json;
 using System.Text.Json;
 
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR"); //Definição de qual será a região aplicada em toda a solução.
-// --------------------- Métodos de extensão (blowmind)
+// --------------------- Herança
+Aluno a1 = new Aluno(nome: "Fulano", sobrenome: "deTal", idade: 22, turma: "Turma 101");
+a1.Apresentar();
+a1.IncluiFinanciamento(250.00M);
+a1.GetSaldoFinanciado();
 
+
+
+
+// --------------------- Métodos de extensão (blowmind)
+/*
 bool verificaint = false;
 int divisor, multiplo;
+do
+{
+    verificaint = false;
+    Console.WriteLine($"Digite um inteiro para dividendo:");
+    string entrada = Console.ReadLine();
+    if (Int32.TryParse(entrada, out multiplo) == true)
+    {
+        verificaint = true;
+    }
+    else Console.WriteLine("Valor inválido");
+} while (verificaint == false);
+
 do
 {
     Console.WriteLine("Digite um inteiro divisor:");
@@ -20,20 +41,13 @@ do
     }
     else Console.WriteLine("Valor inválido");
 } while (verificaint == false);
-do
-{
-    verificaint = false;
-    Console.WriteLine($"Digite um inteiro para identificar se é múltiplo de {divisor}:");
-    string entrada = Console.ReadLine();
-    if (Int32.TryParse(entrada, out multiplo) == true)
-    {
-        verificaint = true;
-    }
-    else Console.WriteLine("Valor inválido");
-} while (verificaint == false);
 
 Console.WriteLine($"O número {multiplo} {(multiplo.VerifyMultiple(divisor) ? "é multiplo de" : "não é múltiplo de")} {divisor}");
 
+Console.WriteLine("Digite uma tecla para continuar.");
+
+Console.Read();
+*/
 
 // --------------------- Variáveis Dynamic
 /*

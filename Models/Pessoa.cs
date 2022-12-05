@@ -8,7 +8,7 @@ using System.Globalization;
 
 namespace Propriedades___Metodos___Construtores.Models
 {
-    public class Pessoa
+    public abstract class Pessoa
     {
         public Pessoa(){}
         public Pessoa(string nome, string sobrenome, DateTime datainc, decimal Desconto)
@@ -16,6 +16,11 @@ namespace Propriedades___Metodos___Construtores.Models
             Nome = nome;
             Sobrenome = sobrenome;
             DataInc = datainc.ToString("dd/MM/yyyy HH:mm");
+        }
+        public Pessoa(string nome, string sobrenome)
+        {
+            Nome = nome;
+            Sobrenome = sobrenome;
         }
         public void Deconstruct(out string nome, out string sobrenome)
         {
@@ -25,6 +30,7 @@ namespace Propriedades___Metodos___Construtores.Models
 
         private string _nome;
         private int _idade;
+        protected decimal ValorFinanciado;
 
         public string DataInc { get; set; }
 
@@ -69,9 +75,11 @@ namespace Propriedades___Metodos___Construtores.Models
 
         public string NomeCompleto => (Nome + " " + Sobrenome).ToUpper();
 
-        public void Apresentar()
+        public virtual void Apresentar()
         {
-            Console.WriteLine($"Nome: {NomeCompleto} - Idade: {Idade}");
+            Console.WriteLine($"Olá! meu nome é {NomeCompleto} e eu tenho {Idade} anos.");
         }
+
+        public abstract void IncluiFinanciamento(decimal mensalidade);
     }
 }
