@@ -241,14 +241,12 @@ foreach (int valor2 in fila)
 */
 
 // --------------------- Usando as propriedades, métodos e construtores / Json
-
+/*
 //Pessoa p1 = new Pessoa(nome: "Douglas", sobrenome: "Domingues", datainc: DateTime.Now);
 //Pessoa p2 = new Pessoa(nome: "Isabela", sobrenome: "Domingues", datainc: DateTime.Now);
 //Pessoa p3 = new Pessoa(nome: "Isadora", sobrenome: "Braga", datainc: DateTime.Now);
 
 Pessoa p1 = new Pessoa();
-Console.WriteLine(Object.Equals(p1, ""));
-Console.WriteLine(p1.GetHashCode);
 
 //Curso c1 = new Curso(nome: "Curso de Canto", valor: 1299.99M);
 //Curso c2 = new Curso(nome: "Fundamentos .NET", valor: 1199.00M);
@@ -270,4 +268,4 @@ Console.WriteLine(p1.GetHashCode);
 //string serialize = JsonConvert.SerializeObject(listaCursos, Formatting.Indented);
 //File.WriteAllText("Arquivos/curso.json", serialize);
 //Console.WriteLine($"\n{serialize}");
-
+*/

@@ -8,7 +8,7 @@ using System.Globalization;
 
 namespace Propriedades___Metodos___Construtores.Models
 {
-    public class Pessoa
+    public abstract class Pessoa
     {
         public Pessoa(){}
         public Pessoa(string nome, string sobrenome, DateTime datainc, decimal Desconto)
@@ -80,9 +80,6 @@ namespace Propriedades___Metodos___Construtores.Models
             Console.WriteLine($"Olá! meu nome é {NomeCompleto} e eu tenho {Idade} anos.");
         }
 
-        public void IncluiFinanciamento(decimal mensalidade)
-        {
-            ValorFinanciado += mensalidade;
-        }
+        public abstract void IncluiFinanciamento(decimal mensalidade);
     }
 }
