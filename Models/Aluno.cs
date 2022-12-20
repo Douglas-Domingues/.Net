@@ -23,10 +23,10 @@ namespace Propriedades___Metodos___Construtores.Models
             Console.WriteLine($"Olá! meu nome é {NomeCompleto}, eu tenho {Idade} anos e pertenço à turma {Turma}");
         }
         // método abstrato obrigatório herdado de Pessoa (classe abstrata)
-        public override void IncluiFinanciamento(decimal mensalidade)
-        {
-            ValorFinanciado += mensalidade;
-        }
+        //public override void IncluiFinanciamento(decimal mensalidade)
+        //{
+        //    ValorFinanciado += mensalidade;
+        //}
 
         public void GetSaldoFinanciado()
         {

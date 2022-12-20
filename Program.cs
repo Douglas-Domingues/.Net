@@ -241,29 +241,33 @@ foreach (int valor2 in fila)
 */
 
 // --------------------- Usando as propriedades, métodos e construtores / Json
-/*
-Pessoa p1 = new Pessoa(nome: "Douglas", sobrenome: "Domingues", datainc: DateTime.Now);
-Pessoa p2 = new Pessoa(nome: "Isabela", sobrenome: "Domingues", datainc: DateTime.Now);
-Pessoa p3 = new Pessoa(nome: "Isadora", sobrenome: "Braga", datainc: DateTime.Now);
 
-Curso c1 = new Curso(nome: "Curso de Canto", valor: 1299.99M);
-Curso c2 = new Curso(nome: "Fundamentos .NET", valor: 1199.00M);
+//Pessoa p1 = new Pessoa(nome: "Douglas", sobrenome: "Domingues", datainc: DateTime.Now);
+//Pessoa p2 = new Pessoa(nome: "Isabela", sobrenome: "Domingues", datainc: DateTime.Now);
+//Pessoa p3 = new Pessoa(nome: "Isadora", sobrenome: "Braga", datainc: DateTime.Now);
 
-c1.Alunos = new List<Pessoa>();
-c2.Alunos = new List<Pessoa>();
-List<Curso> listaCursos = new List<Curso>();
+Pessoa p1 = new Pessoa();
+Console.WriteLine(Object.Equals(p1, ""));
+Console.WriteLine(p1.GetHashCode);
 
-c1.AdicionaAluno(p2);
-c1.AdicionaAluno(p3);
-c2.AdicionaAluno(p1);
+//Curso c1 = new Curso(nome: "Curso de Canto", valor: 1299.99M);
+//Curso c2 = new Curso(nome: "Fundamentos .NET", valor: 1199.00M);
 
-listaCursos.Add(c1);
-listaCursos.Add(c2);
+//c1.Alunos = new List<Pessoa>();
+//c2.Alunos = new List<Pessoa>();
+//List<Curso> listaCursos = new List<Curso>();
 
-Console.WriteLine($"O Curso {c1.Nome} possui {c1.ContagemAlunos()} Alunos");
-c1.ListaAlunos();
+//c1.AdicionaAluno(p2);
+//c1.AdicionaAluno(p3);
+//c2.AdicionaAluno(p1);
 
-string serialize = JsonConvert.SerializeObject(listaCursos, Formatting.Indented);
-File.WriteAllText("Arquivos/curso.json", serialize);
-Console.WriteLine($"\n{serialize}");
-*/
+//listaCursos.Add(c1);
+//listaCursos.Add(c2);
+
+//Console.WriteLine($"O Curso {c1.Nome} possui {c1.ContagemAlunos()} Alunos");
+//c1.ListaAlunos();
+
+//string serialize = JsonConvert.SerializeObject(listaCursos, Formatting.Indented);
+//File.WriteAllText("Arquivos/curso.json", serialize);
+//Console.WriteLine($"\n{serialize}");
+

@@ -23,7 +23,9 @@ namespace Propriedades___Metodos___Construtores.Models
 
         public void AdicionaAluno(Pessoa aluno)
         {
-            Alunos.Add(aluno);
+            
+            Alunos.Add(aluno);           
+            
         }
 
         public int ContagemAlunos()
