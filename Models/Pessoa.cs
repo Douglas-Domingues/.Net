@@ -71,8 +71,6 @@ namespace Propriedades___Metodos___Construtores.Models
 
         public string Sobrenome { get; set; }
 
-        public decimal? Desconto { get; set; }
-
         public string NomeCompleto => (Nome + " " + Sobrenome).ToUpper();
 
         public virtual void Apresentar()

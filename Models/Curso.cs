@@ -18,10 +18,10 @@ namespace Propriedades___Metodos___Construtores.Models
         }
 
         public string Nome { get; set; }
-        public List<Pessoa> Alunos { get; set; }
+        internal List<Aluno> Alunos { get; set; }
         public decimal Valor { get; set; }
 
-        public void AdicionaAluno(Pessoa aluno)
+        internal void AdicionaAluno(Aluno aluno)
         {
             
             Alunos.Add(aluno);           
@@ -33,7 +33,7 @@ namespace Propriedades___Metodos___Construtores.Models
             return Alunos.Count;
         }
 
-        public bool RemoveAluno(Pessoa aluno)
+        internal bool RemoveAluno(Aluno aluno)
         {
             return Alunos.Remove(aluno);
         }

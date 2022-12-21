@@ -8,8 +8,6 @@ namespace Propriedades___Metodos___Construtores.Models
 {
     internal class Aluno : Pessoa
     {
-        public string Turma;        
-
         public Aluno(string nome, string sobrenome, int idade, string turma)
         {
             Turma = turma;
@@ -17,6 +15,11 @@ namespace Propriedades___Metodos___Construtores.Models
             Sobrenome = sobrenome;
             Idade = idade;
         }
+        public Aluno() { }
+
+        public string Turma;
+        public decimal? Desconto { get; set; }
+
         //sobrescrita de método (polimorfismo em tempo de execução)
         public override void Apresentar()
         {
