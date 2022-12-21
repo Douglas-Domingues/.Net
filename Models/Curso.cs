@@ -18,14 +18,12 @@ namespace Propriedades___Metodos___Construtores.Models
         }
 
         public string Nome { get; set; }
-        internal List<Aluno> Alunos { get; set; }
+        public List<Aluno> Alunos { get; set; }
         public decimal Valor { get; set; }
 
         internal void AdicionaAluno(Aluno aluno)
-        {
-            
-            Alunos.Add(aluno);           
-            
+        {            
+            Alunos.Add(aluno);
         }
 
         public int ContagemAlunos()

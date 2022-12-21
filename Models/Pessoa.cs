@@ -11,7 +11,7 @@ namespace Propriedades___Metodos___Construtores.Models
     public abstract class Pessoa
     {
         public Pessoa(){}
-        public Pessoa(string nome, string sobrenome, DateTime datainc, decimal Desconto)
+        public Pessoa(string nome, string sobrenome, DateTime datainc)
         {
             Nome = nome;
             Sobrenome = sobrenome;

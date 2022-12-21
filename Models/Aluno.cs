@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Propriedades___Metodos___Construtores.Models
 {
-    internal class Aluno : Pessoa
+    public class Aluno : Pessoa
     {
         public Aluno(string nome, string sobrenome, int idade, string turma)
         {
@@ -14,6 +14,14 @@ namespace Propriedades___Metodos___Construtores.Models
             Nome = nome;
             Sobrenome = sobrenome;
             Idade = idade;
+        }
+
+        public Aluno(string nome, string sobrenome, DateTime datainc, decimal? desconto)
+        {
+            Nome = nome;
+            Sobrenome = sobrenome;
+            DataInc = datainc.ToString("dd/MM/yyyy HH:mm");
+            Desconto = desconto;
         }
         public Aluno() { }
 

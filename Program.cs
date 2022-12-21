@@ -114,6 +114,7 @@ internal class Program
 
         List<Curso> cursos = JsonConvert.DeserializeObject<List<Curso>>(File.ReadAllText("Arquivos/curso.json"));
 
+
         foreach (Curso curso in cursos)
         {
             curso.ListaAlunos();
