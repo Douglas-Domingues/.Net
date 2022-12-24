@@ -3,7 +3,7 @@ using System.Globalization; //System.Globalization usado para alterar a região 
 using Newtonsoft.Json;
 
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
@@ -15,10 +15,6 @@ internal class Program
         a1.Apresentar();
         a1.IncluiFinanciamento(250.00M);
         a1.GetSaldoFinanciado();
-
-
-
-
 
         // --------------------- Métodos de extensão (blowmind)
         /*
@@ -114,12 +110,10 @@ internal class Program
 
         List<Curso> cursos = JsonConvert.DeserializeObject<List<Curso>>(File.ReadAllText("Arquivos/curso.json"));
 
-
         foreach (Curso curso in cursos)
         {
             curso.ListaAlunos();
         }
-
 
         // --------------------- Desconstrutores e IF Ternário
         /*

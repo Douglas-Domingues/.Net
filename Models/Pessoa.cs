@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Globalization;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Propriedades___Metodos___Construtores.Models
 {
-    public abstract class Pessoa
+    public abstract class Pessoa : iPessoa
     {
         public Pessoa(){}
         public Pessoa(string nome, string sobrenome, DateTime datainc)
@@ -79,5 +80,10 @@ namespace Propriedades___Metodos___Construtores.Models
         }
 
         public abstract void IncluiFinanciamento(decimal mensalidade);
+    }
+
+    public interface iPessoa
+    {
+        void Apresentar();
     }
 }
